@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react"
 import Btc from "../assets/btc.png"
+import Eth from "../assets/eth.png"
+import Doge from "../assets/doge.png"
 
 function getPrice(symbol, data) {
     for (let i = 0; i < data.length; i++){
@@ -12,6 +14,8 @@ function getPrice(symbol, data) {
 function Hero(){
 
     const [btcPrice, setBtcPrice] = useState("Loading...");
+    const [ethPrice, setEthPrice] = useState("Loading...");
+    const [dogePrice, setDogePrice] = useState("Loading...");
     const [refetch, setRefetch] = useState(false);
 
     const url = "https://api.blockchain.com/v3/exchange/tickers";
@@ -21,32 +25,47 @@ function Hero(){
             .then((data)=>data.json())
             .then((data)=>{
                 setBtcPrice(getPrice("BTC-USD", data));
+                setEthPrice(getPrice("ETH-USD", data));
+                setDogePrice(getPrice("DOGE-USD", data));
             });
         
     }, [refetch]);
 
+    function Refresh(){
+        setRefetch(!refetch);
+    }
+
     return(
         <>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center">
                 <h1>Trade crypto at <span className="text-purple-600">0%</span> fees*</h1>
+                <h2>For our premium members*</h2>
             </div>
             <br/>
-
-            <div className="flex flex-row justify-center">
-                <div>
-                    <img src={Btc}></img>
-                    Bitcoin: {btcPrice}
+            <div className="flex flex-row justify-center text-xl">
+                <div className="m-8">
+                    <img src={Btc} width="200"></img>
+                    Bitcoin: <span className="text-green-500">{`${btcPrice}$ `} </span>
+                    <button onClick={Refresh} className="border-solid rounded-md border-black border-2 bg-blue-700 p-1">
+                        Refresh
+                    </button>
                     <div></div>
                 </div>
                 
-                <div>
-                    <img src={Btc}></img>
-                    Etherium
+                <div className="m-8">
+                    <img src={Eth} width="200"></img>
+                    Etherium: <span className="text-green-500">{`${ethPrice}$ `} </span>
+                    <button onClick={Refresh} className="border-solid rounded-md border-black border-2 bg-blue-700 p-1">
+                        Refresh
+                    </button>
                 </div>
 
-                <div>
-                    <img src={Btc}></img>
-                    Dodgecoin
+                <div className="m-8">
+                    <img src={Doge} width="200"></img>
+                    DogeCoin: <span className="text-green-500">{`${dogePrice}$ `} </span>
+                    <button onClick={Refresh} className="border-solid rounded-md border-black border-2 bg-blue-700 p-1">
+                        Refresh
+                    </button>
                 </div>
             </div>
         </>
