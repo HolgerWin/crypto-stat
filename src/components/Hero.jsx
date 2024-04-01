@@ -39,7 +39,7 @@ function Hero(){
         <>
             <div className="flex flex-col items-center">
                 <h1>Trade crypto at <span className="text-purple-600">0%</span> fees*</h1>
-                <h2>For our premium members*</h2>
+                <h2 className="mt-2 text-lg">Only for premium members*</h2>
             </div>
             <br/>
             <div className="flex flex-row justify-center text-xl">
