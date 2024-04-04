@@ -1,8 +1,13 @@
-# React + Vite
+# Cryptostat - We make your wallet hung 🥱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Join Cryptostat today!🚀🚀 (not real tho)
 
-Currently, two official plugins are available:
+Get an overview 🔍 of the crypto market 🤑
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Join us in our journey 😤 of making **you** 🥵 rich 🏃‍♂️💨
+
+This project is made with these blazingly fast technologies 🔥
+- React JS 😲
+- Tailwind CSS 😳
+- My hands 🥶
+
